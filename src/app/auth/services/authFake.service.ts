@@ -151,7 +151,6 @@ private getEmailFromCode(code: string): string {
   
   //TODO: verifica authtnticacion
   isAuthenticated(): boolean {
-    
     return !!localStorage.getItem(this.CURRENT_USER_Key);
   }
   

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CompanyListPageRoutingModule } from './company-list-routing.module';
+import { PublicPageRoutingModule } from './public-routing.module';
 
-import { CompanyListPage } from './company-list.page';
+import { PublicPage } from './public.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CompanyListPageRoutingModule
+    PublicPageRoutingModule
   ],
-  declarations: [CompanyListPage]
+  declarations: [PublicPage]
 })
-export class CompanyListPageModule {}
+export class PublicPageModule {}

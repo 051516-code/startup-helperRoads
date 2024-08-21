@@ -8,9 +8,9 @@ import { PublicPageRoutingModule } from './public-routing.module';
 
 import { PublicPage } from './public.page';
 
-import { MapModule } from '../shared/components/map-component/map.module';
-import { MostPopularComponent } from '../shared/components/most-popular/most-popular.component';
 import { LoadingComponent } from '../shared/components/loading/loading.component';
+import { MapModule } from '../shared/components/map-component/map.module';
+import { MostPopularModule } from '../shared/components/most-popular/most-popular.module';
 
 @NgModule({
   imports: [
@@ -18,12 +18,16 @@ import { LoadingComponent } from '../shared/components/loading/loading.component
     FormsModule,
     IonicModule,
     PublicPageRoutingModule,
-    MapModule
+    MapModule,
+    MostPopularModule
+
   ],
   declarations: [
     PublicPage,
-    MostPopularComponent,
-    LoadingComponent
+    LoadingComponent,
+   
+
+
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

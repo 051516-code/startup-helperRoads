@@ -8,8 +8,8 @@ const routes: Routes = [
     path: '',
     component: PublicPage
   },  {
-    path: 'company-entry',
-    loadChildren: () => import('./company-entry/company-entry.module').then( m => m.CompanyEntryPageModule)
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   }
 
 ];

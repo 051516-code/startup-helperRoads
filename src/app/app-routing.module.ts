@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AppRoutes } from './app-routes.constant';
-
+// import { AuthGuard } from './auth/guards/auth.guard';
 const routes: Routes = [
  
   {
@@ -22,13 +22,13 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
   },
   {
-    path: AppRoutes.MANAGEMENT,
-    loadChildren: () => import('./management/management.module').then( m => m.ManagementPageModule)
-  },
-  {
     path: AppRoutes.PUBLIC,
     loadChildren: () => import('./public/public.module').then( m => m.PublicPageModule)
   },
+  {
+    path: '**',
+    redirectTo: AppRoutes.SPLASH
+  }
 ];
 
 @NgModule({

@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
     // Redirige al usuario a la página de autenticación
 
     this.router.navigate([`${AppRoutes.AUTH}`]).then(() => {
-      // Después de la navegación, recarga la página
+      // Después de la navegación, recarga la página y cierra el menu
       this.closeMenu();
       window.location.reload();
     }).catch(err => {
@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
 
   goToCompanyMode(){
     this.router.navigate(['helperRoads/company-mode'])
-    // this.router.navigate([`${AppRoutes.AUTH}`])
+    this.router.navigate([`${AppRoutes.MANAGEMENT}`])
     this.closeMenu();
   }
 
@@ -71,7 +71,6 @@ export class AppComponent implements OnInit {
     this.router.navigate(['helperRoads/user'])
     // this.router.navigate([`${AppRoutes.AUTH}`])
     this.closeMenu();
-
   }
 
   async goToSettings() {
@@ -81,8 +80,8 @@ export class AppComponent implements OnInit {
   }
 
   goToMap(){
-    this.router.navigate(['helperRoads/map'])
-    // this.router.navigate([`${AppRoutes.AUTH}`])
+    
+    this.router.navigate([`${AppRoutes.PUBLIC}`])
     this.closeMenu();
   
   }
@@ -90,6 +89,7 @@ export class AppComponent implements OnInit {
   async closeMenu() {
     
     await this.menuController.toggle();
+    
   }
 
 }

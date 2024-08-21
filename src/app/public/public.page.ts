@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { AppRoutes } from '../app-routes.constant';
+import { Company } from '../core/interfaces/company.interface';
 
 @Component({
   selector: 'app-public',
@@ -10,26 +12,26 @@ export class PublicPage implements OnInit {
 
   isLoading = false;
 
-  avatarList: string[] = [
-    'assets/img/negro.jpg',
-    'assets/img/moura.jpeg',
-    'assets/img/borracha.jpeg',
-    'assets/img/negro.jpg',
-    'assets/img/avatar2.jpg',
-    'assets/img/avatar3.jpg',
-    'assets/img/negro.jpg',
-    'assets/img/avatar2.jpg',
-    'assets/img/avatar3.jpg',
-    'assets/img/negro.jpg',
-    'assets/img/avatar2.jpg',
-    'assets/img/avatar3.jpg',
+  avatarList: Company[] = [
+    {
+      image: 'assets/img/negro.jpg',
+      name: 'Empresa Negra',
+      rating: [1, 1, 1, 1, 1], // 5 estrellas
+      distance: 5 // 5 km
+    },
+    {
+      image: 'assets/img/moura.jpeg',
+      name: 'Empresa Moura',
+      rating: [1, 1, 1, 1, 0], // 4 estrellas
+      distance: 10 // 10 km
+    },
+    {
+      image: 'assets/img/borracha.jpeg',
+      name: 'Empresa Borracha',
+      rating: [1, 1, 1, 0, 0], // 3 estrellas
+      distance: 15 // 15 km
+    }
   ];
-
-  cardList = [
-    { title: 'Card 1', content: 'This is the content of card 1' },
-    { title: 'Card 2', content: 'This is the content of card 2' }
-  ];
-
 
   constructor(
     private alertController : AlertController,

@@ -1,6 +1,7 @@
 import { Component, OnInit , Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { delay } from 'rxjs';
+import { Company } from '../../../core/interfaces/company.interface';
+
 
 @Component({
   selector: 'app-most-popular',
@@ -8,10 +9,10 @@ import { delay } from 'rxjs';
   styleUrls: ['./most-popular.component.scss'],
 })
 export class MostPopularComponent  implements OnInit {
-  @Input() avatars: string[] = []; // Lista de URLs de avatares
+  @Input() companies: Company[] = []; // Lista de URLs de avatares
 
   swiperConfig = {
-    slidesPerView: 4, // Muestra tres slides por vista
+    slidesPerView: 2, // Muestra tres slides por vista
     spaceBetween: 10, // Espacio entre los slides
     loop: true, // Habilita el loop para que el carrusel se repita
     autoplay: {
@@ -22,14 +23,14 @@ export class MostPopularComponent  implements OnInit {
     navigation: true // Habilita los botones de navegación
   };
 
-  
-   constructor(private router: Router) { }
+   constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {}
 
   navigateToPage(index: number) {
-    // Aquí puedes definir la lógica para redirigir a una página basada en el índice o en alguna lógica
-    // Por ejemplo:
+    // todo: redirige a la pagina del perfil de la empresa
     console.log('perfil most popular')
     this.router.navigate([`helperRoads/map/company-profile/${index}`]); // Reemplaza con la ruta deseada
   }
