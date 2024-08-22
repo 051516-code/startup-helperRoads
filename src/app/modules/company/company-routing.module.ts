@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CompanyPage } from './company.page';
+import { CompanyRoutes } from './company-routes.constant';
 
 const routes: Routes = [
   {
@@ -9,7 +10,7 @@ const routes: Routes = [
     component: CompanyPage
   },
   {
-    path: 'company-create',
+    path: `${CompanyRoutes.CREATE}`,
     loadChildren: () => import('./management/company-create/company-create.module').then( m => m.CompanyCreatePageModule)
   }
 
