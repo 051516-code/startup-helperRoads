@@ -1,4 +1,5 @@
 
 export const CompanyRoutes = {
-    CREATE : 'create'
+    CREATE : 'create',
+    PROFILE: 'profile'
 };

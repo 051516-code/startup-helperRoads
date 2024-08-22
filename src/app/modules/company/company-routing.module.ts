@@ -12,7 +12,12 @@ const routes: Routes = [
   {
     path: `${CompanyRoutes.CREATE}`,
     loadChildren: () => import('./management/company-create/company-create.module').then( m => m.CompanyCreatePageModule)
+  },
+  {
+    path: CompanyRoutes.PROFILE,
+    loadChildren: () => import('./public/profile/profile.module').then( m => m.ProfilePageModule)
   }
+
 
 ];
 
