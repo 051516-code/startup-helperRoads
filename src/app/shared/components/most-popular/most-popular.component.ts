@@ -1,6 +1,8 @@
 import { Component, OnInit , Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Company } from '../../../core/interfaces/company.interface';
+import { AppRoutes } from '../../../app-routes.constant';
+import { ModulesRoutes } from '../../../modules/modules-routes.constant';
 
 
 @Component({
@@ -31,8 +33,9 @@ export class MostPopularComponent  implements OnInit {
 
   navigateToPage(index: number) {
     // todo: redirige a la pagina del perfil de la empresa
-    console.log('perfil most popular')
-    this.router.navigate([`helperRoads/map/company-profile/${index}`]); // Reemplaza con la ruta deseada
+    console.log('perfil most popular',index)
+    this.router.navigate([`${AppRoutes.MODULE}/${ModulesRoutes.PROFILE}`])
+    // this.router.navigate([`helperRoads/map/company-profile/${index}`]); // Reemplaza con la ruta deseada
   }
 
 }

@@ -4,7 +4,10 @@ import { Register } from './auth/interfaces/resgister.interface';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { LocationService } from './core/services/location.service';
+
 import { AppRoutes } from './app-routes.constant';
+import { PublicRoutes } from './public/public-routes.constant';
+import { ModulesRoutes } from './modules/modules-routes.constant';
 
 @Component({
   selector: 'app-root',
@@ -54,7 +57,7 @@ export class AppComponent implements OnInit {
     this.router.navigate([`${AppRoutes.AUTH}`]).then(() => {
       // Después de la navegación, recarga la página y cierra el menu
       this.closeMenu();
-      window.location.reload();
+      // window.location.reload();
     }).catch(err => {
       // Maneja cualquier error que pueda ocurrir durante la navegación
       console.error('Error during navigation:', err);
@@ -62,14 +65,12 @@ export class AppComponent implements OnInit {
   }
 
   goToCompanyMode(){
-    this.router.navigate(['helperRoads/company-mode'])
-    this.router.navigate([`${AppRoutes.MANAGEMENT}`])
+    this.router.navigate([`${AppRoutes.MODULE}/${ModulesRoutes.COMPANY}`])
     this.closeMenu();
   }
 
   goToProfile(){
-    this.router.navigate(['helperRoads/user'])
-    // this.router.navigate([`${AppRoutes.AUTH}`])
+    this.router.navigate([`${AppRoutes.MODULE}/${ModulesRoutes.PROFILE}`])
     this.closeMenu();
   }
 
@@ -81,9 +82,8 @@ export class AppComponent implements OnInit {
 
   goToMap(){
     
-    this.router.navigate([`${AppRoutes.PUBLIC}`])
+    this.router.navigate([`${AppRoutes.MAP}`])
     this.closeMenu();
-  
   }
 
   async closeMenu() {

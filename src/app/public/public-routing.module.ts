@@ -7,10 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: PublicPage
-  },  {
-    path: 'company-entry',
-    loadChildren: () => import('./company-entry/company-entry.module').then( m => m.CompanyEntryPageModule)
-  }
+  },
+
+
+  // aqui se colocan lo demas de pblic/ profile etc..
 
 ];
 

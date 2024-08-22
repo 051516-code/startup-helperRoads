@@ -30,6 +30,12 @@ export class PublicPage implements OnInit {
       name: 'Empresa Borracha',
       rating: [1, 1, 1, 0, 0], // 3 estrellas
       distance: 15 // 15 km
+    },
+    {
+      image: 'assets/img/borracha.jpeg',
+      name: 'Empresa Borracha',
+      rating: [1, 1, 1, 0, 0], // 3 estrellas
+      distance: 15 // 15 km
     }
   ];
 

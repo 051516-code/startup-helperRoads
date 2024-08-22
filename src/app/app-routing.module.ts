@@ -5,30 +5,36 @@ import { AppRoutes } from './app-routes.constant';
 const routes: Routes = [
  
   {
-    path: '',
+    path : '',
     redirectTo: AppRoutes.SPLASH,
     pathMatch: 'full'
   },
   {
-    path: AppRoutes.SPLASH,
+    path : AppRoutes.SPLASH,
     loadChildren: () => import('./splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
   },
   {
-    path: AppRoutes.HOME,
+    path : AppRoutes.HOME,
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: AppRoutes.AUTH,
+    path : AppRoutes.AUTH,
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
   },
   {
-    path: AppRoutes.PUBLIC,
+    path : AppRoutes.MAP,
     loadChildren: () => import('./public/public.module').then( m => m.PublicPageModule)
+  },
+  {
+    path: AppRoutes.MODULE,
+    loadChildren: () => import('./modules/modules.module').then( m => m.ModulesModule)
   },
   {
     path: '**',
     redirectTo: AppRoutes.SPLASH
-  }
+  },
+
+
 ];
 
 @NgModule({

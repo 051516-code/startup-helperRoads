@@ -52,7 +52,7 @@ ngOnInit() {
       if (loggedIn) {
         this.toastService.showSuccessToast('Login Correcto')
 
-        this.router.navigate([`${AppRoutes.PUBLIC}`]);
+        this.router.navigate([`${AppRoutes.MAP}`]);
         
       } else {
         this.toastService.showDangerToast('Login Incorrecto revisa tus credenciales')

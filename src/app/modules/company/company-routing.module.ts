@@ -1,23 +1,22 @@
-
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CompanyRoutes } from './company-routes.constant';
+import { Routes, RouterModule } from '@angular/router';
+
+import { CompanyPage } from './company.page';
 
 const routes: Routes = [
-
   {
-    path: CompanyRoutes.PUBLIC,
-    loadChildren: () => import('./public/public.module').then( m => m.PublicPageModule)
+    path: '',
+    component: CompanyPage
   },
   {
-    path: CompanyRoutes.MANAGEMENT,
-    loadChildren: () => import('./management/management.module').then( m => m.ManagementPageModule)
+    path: 'company-create',
+    loadChildren: () => import('./management/company-create/company-create.module').then( m => m.CompanyCreatePageModule)
   }
-  
+
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class CompanyRoutingModule { }
+export class CompanyPageRoutingModule {}

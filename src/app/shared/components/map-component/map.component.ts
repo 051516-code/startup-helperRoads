@@ -10,8 +10,8 @@ import { Icon, Style } from 'ol/style';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
 import ZoomSlider from 'ol/control/ZoomSlider';
-import { LocationService } from '../../../core/services/location.service';
 import { Subscription } from 'rxjs';
+import { LocationService } from '../../../core/services/location.service';
 
 @Component({
   selector: 'app-map',
@@ -19,12 +19,15 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit, OnDestroy {
+
   private map: Map | undefined;
   private userLocationLayer: VectorLayer<VectorSource> | undefined;
   private userCoords: [number, number] | undefined;
   private locationSubscription: Subscription | undefined;
 
-  constructor(private locationService: LocationService) { }
+  constructor(
+    private locationService: LocationService
+  ) { }
 
   ngOnInit() {
     this.initMap();
