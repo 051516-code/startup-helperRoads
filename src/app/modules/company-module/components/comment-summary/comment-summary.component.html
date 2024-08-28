@@ -1,0 +1,15 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Conteo de Comentarios</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label>Comentarios</ion-label>
+      <ion-note slot="end">{{ commentStats.totalComments }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Valoración Promedio</ion-label>
+      <ion-note slot="end">{{ commentStats.averageRating }}/5</ion-note>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

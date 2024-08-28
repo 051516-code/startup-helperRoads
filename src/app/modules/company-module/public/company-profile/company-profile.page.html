@@ -11,8 +11,16 @@
       <div class="logo"></div>
     </div>
 
-<h3>Borracharia do lourenco </h3>
-<p>o pegador de gatinhas</p>
+    <h3>Borracharia do lourenco </h3>
+    <p>o pegador de gatinhas</p>
   </div>
+  <ion-content>
+    <app-rating-bars [ratings]="ratings" [labels]="labels"></app-rating-bars>
+    <app-comment-summary [commentStats]="commentStats"></app-comment-summary>
+    
+    <ion-list>
+      <app-comment-card *ngFor="let comment of comments" [comment]="comment"></app-comment-card>
+    </ion-list>
+  </ion-content>
   
 </ion-content>

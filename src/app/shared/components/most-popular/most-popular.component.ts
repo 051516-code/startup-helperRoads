@@ -7,7 +7,6 @@ import { ModulesRoutes } from '../../../modules/modules-routes.constant';
 import { COMPANY_ROUTES } from 'src/app/modules/company-module/company-routes.constant';
 
 
-
 @Component({
   selector: 'app-most-popular',
   templateUrl: './most-popular.component.html',
