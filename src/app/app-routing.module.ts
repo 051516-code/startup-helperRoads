@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AppRoutes } from './app-routes.constant';
-// import { AuthGuard } from './auth/guards/auth.guard';
+import { AuthGuard } from './auth/guards/auth.guard';
 const routes: Routes = [
  
   {
@@ -23,17 +23,18 @@ const routes: Routes = [
   },
   {
     path : AppRoutes.MAP,
-    loadChildren: () => import('./public/public.module').then( m => m.PublicPageModule)
+    loadChildren: () => import('./public/public.module').then( m => m.PublicPageModule),
+    canActivate: [ AuthGuard ]
   },
   {
     path: AppRoutes.MODULE,
-    loadChildren: () => import('./modules/modules.module').then( m => m.ModulesModule)
+    loadChildren: () => import('./modules/modules.module').then( m => m.ModulesModule),
+    // canActivate: [ AuthGuard ]
   },
   {
     path: '**',
     redirectTo: AppRoutes.SPLASH
   },
-
 
 ];
 

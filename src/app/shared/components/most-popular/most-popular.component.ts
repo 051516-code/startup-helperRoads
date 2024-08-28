@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { Company } from '../../../core/interfaces/company.interface';
 import { AppRoutes } from '../../../app-routes.constant';
 import { ModulesRoutes } from '../../../modules/modules-routes.constant';
-import { CompanyRoutes } from '../../../modules/company/company-routes.constant';
-
+// import { CompanyRoutes } from '../../../modules/company/company-routes.constant';
+import { COMPANY_ROUTES } from 'src/app/modules/company-module/company-routes.constant';
 
 @Component({
   selector: 'app-most-popular',
@@ -35,8 +35,7 @@ export class MostPopularComponent  implements OnInit {
   navigateToPage(index: number) {
     // todo: redirige a la pagina del perfil de la empresa
     console.log('perfil most popular',index)
-    this.router.navigate([`${AppRoutes.MODULE}/${ModulesRoutes.COMPANY}/${CompanyRoutes.PROFILE}`])
-    // this.router.navigate([`helperRoads/map/company-profile/${index}`]); // Reemplaza con la ruta deseada
+    this.router.navigate([`${AppRoutes.MODULE}/${ModulesRoutes.COMPANY}/${COMPANY_ROUTES.PUBLIC.PROFILE}`])
   }
 
 }

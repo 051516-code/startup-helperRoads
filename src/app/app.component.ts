@@ -8,6 +8,7 @@ import { LocationService } from './core/services/location.service';
 import { AppRoutes } from './app-routes.constant';
 import { PublicRoutes } from './public/public-routes.constant';
 import { ModulesRoutes } from './modules/modules-routes.constant';
+import { COMPANY_ROUTES } from './modules/company-module/company-routes.constant';
 
 @Component({
   selector: 'app-root',
@@ -70,7 +71,9 @@ export class AppComponent implements OnInit {
   }
 
   goToProfile(){
-    this.router.navigate([`${AppRoutes.MODULE}/${ModulesRoutes.PROFILE}`])
+    
+    
+    this.router.navigate([`${AppRoutes.MODULE}/${ModulesRoutes.COMPANY}/${COMPANY_ROUTES.PUBLIC.COMPANY_LIST}`])
     this.closeMenu();
   }
 
