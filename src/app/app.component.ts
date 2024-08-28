@@ -6,7 +6,6 @@ import { MenuController } from '@ionic/angular';
 import { LocationService } from './core/services/location.service';
 
 import { AppRoutes } from './app-routes.constant';
-import { PublicRoutes } from './public/public-routes.constant';
 import { ModulesRoutes } from './modules/modules-routes.constant';
 import { COMPANY_ROUTES } from './modules/company-module/company-routes.constant';
 

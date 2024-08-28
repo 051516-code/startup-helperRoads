@@ -6,6 +6,8 @@ import { ModulesRoutes } from '../../../modules/modules-routes.constant';
 // import { CompanyRoutes } from '../../../modules/company/company-routes.constant';
 import { COMPANY_ROUTES } from 'src/app/modules/company-module/company-routes.constant';
 
+
+
 @Component({
   selector: 'app-most-popular',
   templateUrl: './most-popular.component.html',
@@ -13,6 +15,7 @@ import { COMPANY_ROUTES } from 'src/app/modules/company-module/company-routes.co
 })
 export class MostPopularComponent  implements OnInit {
   @Input() companies: Company[] = []; // Lista de URLs de avatares
+  isLoading = false;
 
   swiperConfig = {
     slidesPerView: 2, // Muestra tres slides por vista
@@ -33,9 +36,16 @@ export class MostPopularComponent  implements OnInit {
   ngOnInit() {}
 
   navigateToPage(index: number) {
-    // todo: redirige a la pagina del perfil de la empresa
+    this.isLoading = true;
+
+    setTimeout(() => {
+      // todo: redirige a la pagina del perfil de la empresa
+      this.isLoading = false;
     console.log('perfil most popular',index)
     this.router.navigate([`${AppRoutes.MODULE}/${ModulesRoutes.COMPANY}/${COMPANY_ROUTES.PUBLIC.PROFILE}`])
+
+    }, 3000)
+    
   }
 
 }

@@ -1,6 +1,9 @@
 <!-- Título del componente -->
 <h6 class="title">Most Populars in this area</h6>
 
+ <!--  Loading  -->
+ <app-loading [show]="isLoading"></app-loading>
+
 <!-- Configuración de Swiper -->
 <swiper-container
   [slidesPerView]="2"
@@ -24,6 +27,9 @@
       </div>
     </div>
   </swiper-slide>
+ 
 </swiper-container>
+
+
 
 

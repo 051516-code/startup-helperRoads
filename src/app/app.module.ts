@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AuthGuard } from './auth/guards/auth.guard';
 import { register } from 'swiper/element/bundle';
+
 register();
 
 
@@ -16,6 +17,7 @@ register();
   declarations:
   [
     AppComponent,
+  
    
   ],
   imports: [

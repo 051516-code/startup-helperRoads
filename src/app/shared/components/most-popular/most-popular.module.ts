@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MostPopularComponent } from './most-popular.component';
 
 
+
 @NgModule({
   declarations: [
-    MostPopularComponent
+    MostPopularComponent,
+    
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     MostPopularComponent // Exporta el componente para su uso en otros módulos
